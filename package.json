@@ -49,5 +49,14 @@
     "client": {
       "platform": "web"
     }
+  },
+  "author": "Destinhue",
+  "homepage": "https://github.com/Destinhue/dsh-ears",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Destinhue/dsh-ears.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Destinhue/dsh-ears/issues"
   }
 }
