@@ -14,7 +14,7 @@ from render import (  # noqa: E402
 
 SPEECH = [
     (0.35, 7.94, ["你让大模型听一段音频，它只会说：抱歉，我看不到声音。", "因为它没有耳朵。"]),
-    (10.35, 10.27, ["现在，给它装上 dsh-ears。", "七个本地工具，把声音变成能读的文字和数字。", "不联网，也不花钱。"]),
+    (10.35, 10.10, ["现在，给它装上 better ears。", "七个本地工具，把声音变成能读的文字和数字。", "不联网，也不花钱。"]),
     (21.05, 10.46, ["先看人声。", "切掉音乐和静音，只把有人声的片段送去识别。", "每一句都带时间戳，还能直接导出字幕。"]),
     (33.55, 10.97, ["音乐也一样。", "速度、拍点、调性、和弦根音、段落结构，一次全给你。", "哪段是重复的，也会标出来。"]),
     (45.95, 6.22, ["拿不准的时候，它会说「可能是 90」，", "而不是随便编一个数字。"]),
@@ -74,8 +74,8 @@ def cover(path: str) -> None:
     # top-left brand
     for i, hh in enumerate((10, 19, 13)):
         d.rounded_rectangle([54 + i * 8, 66 - hh, 58 + i * 8, 66], radius=2, fill=alpha(CYAN, 0.95))
-    d.text((84, 66), "dsh-ears", font=font("cjk_sb", 22), fill=alpha(TEXT, 0.95), anchor="ls")
-    d.text((84 + font("cjk_sb", 22).getlength("dsh-ears") + 14, 66), "DeepSeek Harness", font=font("cjk", 18), fill=alpha(DIM, 0.9), anchor="ls")
+    d.text((84, 66), "dsh-better-ears", font=font("cjk_sb", 22), fill=alpha(TEXT, 0.95), anchor="ls")
+    d.text((84 + font("cjk_sb", 22).getlength("dsh-better-ears") + 14, 66), "DeepSeek Harness", font=font("cjk", 18), fill=alpha(DIM, 0.9), anchor="ls")
 
     # badge
     bw = mixed_width("实机演示 · 全本地", 19) + 62
@@ -86,7 +86,7 @@ def cover(path: str) -> None:
     # headline
     d.text((56, 214), "给 agent", font=font("cjk_sb", 62), fill=alpha(TEXT, 0.97), anchor="ls")
     d.text((56, 300), "一双耳朵", font=font("cjk_sb", 86), fill=alpha(CYAN, 0.98), anchor="ls")
-    draw_mixed(d, 60, 372, "dsh-ears · 语音转写 / 音乐分析 / 镜头卡点", 25, (206, 222, 238, 250))
+    draw_mixed(d, 60, 372, "dsh-better-ears · 语音转写 / 音乐分析 / 镜头卡点", 25, (206, 222, 238, 250))
     draw_mixed(d, 60, 414, "七个工具，一条命令，音频不离开本机", 21, (140, 156, 180, 245))
 
     # beat strip graphic
@@ -118,5 +118,5 @@ def cover(path: str) -> None:
 
 
 if __name__ == "__main__":
-    write_srt("out/dsh-ears-promo.srt")
-    cover("out/dsh-ears-cover.png")
+    write_srt("out/dsh-better-ears-promo.srt")
+    cover("out/dsh-better-ears-cover.png")

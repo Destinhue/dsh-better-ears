@@ -41,18 +41,18 @@ test('settings page and API enforce the token', async () => {
 
   try {
     const url = new URL(settings.url);
-    assert.equal(url.pathname, '/dsh-ears');
+    assert.equal(url.pathname, '/dsh-better-ears');
     const token = url.searchParams.get('token');
     assert.ok(token && token.length === 64);
 
-    const noToken = await fetch(origin + '/dsh-ears');
+    const noToken = await fetch(origin + '/dsh-better-ears');
     assert.equal(noToken.status, 403);
 
     const page = await fetch(settings.url);
     assert.equal(page.status, 200);
-    assert.match(await page.text(), /dsh-ears/);
+    assert.match(await page.text(), /dsh-better-ears/);
 
-    const state = await fetch(origin + '/dsh-ears/api/state', {
+    const state = await fetch(origin + '/dsh-better-ears/api/state', {
       headers: { 'x-settings-token': token },
     });
     assert.equal(state.status, 200);
@@ -60,7 +60,7 @@ test('settings page and API enforce the token', async () => {
     assert.equal(body.config.asr.endpoint.apiKey, undefined);
     assert.equal(body.config.asr.endpoint.apiKeySet, true);
 
-    const post = await fetch(origin + '/dsh-ears/api/config', {
+    const post = await fetch(origin + '/dsh-better-ears/api/config', {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-settings-token': token },
       body: JSON.stringify({ maxAnalyzeSeconds: 30 }),

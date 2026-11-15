@@ -1,4 +1,4 @@
-"""Render the dsh-ears promo: 1920x1080 @ 30 fps, silent video on stdout.
+"""Render the dsh-better-ears promo: 1920x1080 @ 30 fps, silent video on stdout.
 
 Usage:  python render.py | ffmpeg -f rawvideo -pix_fmt rgb24 -s 1920x1080 -r 30 -i - ...
 Every number on screen was produced by the real plugin (see README of the promo).
@@ -193,8 +193,8 @@ def draw_brand(img, t, scene_label=""):
     for i, hh in enumerate((14, 26, 18)):
         d.rounded_rectangle([x + i * 10, y + 22 - hh, x + i * 10 + 6, y + 22], radius=3, fill=alpha(CYAN, 0.95))
     name_font = font("cjk_sb", 27)
-    d.text((x + 40, y + 24), "dsh-ears", font=name_font, fill=alpha(TEXT, 0.92), anchor="ls")
-    nx = x + 40 + name_font.getlength("dsh-ears") + 18
+    d.text((x + 40, y + 24), "dsh-better-ears", font=name_font, fill=alpha(TEXT, 0.92), anchor="ls")
+    nx = x + 40 + name_font.getlength("dsh-better-ears") + 18
     d.text((nx, y + 24), "DeepSeek Harness 音频分析插件", font=font("cjk", 21), fill=alpha(DIM, 0.9), anchor="ls")
     if scene_label:
         w = mixed_width(scene_label, 19)
@@ -206,7 +206,7 @@ def draw_brand(img, t, scene_label=""):
 
 CAPTIONS = [
     (0.0, 7.94, "你让大模型听一段音频，它只会说：抱歉，我看不到声音。"),
-    (10.0, 10.25, "现在，给它装上 dsh-ears。七个工具，把声音变成文字和数字。"),
+    (10.0, 10.10, "现在，给它装上 better ears。七个本地工具，把声音变成能读的文字和数字。"),
     (20.7, 10.45, "先看人声：切掉音乐和静音，只识别有人说话的地方。"),
     (33.2, 10.95, "音乐也一样——速度、拍点、调性、和弦、段落结构。"),
     (45.6, 6.2, "拿不准的时候，它会说「可能是 90」，而不是随便编一个数字。"),
@@ -301,7 +301,7 @@ def scene_hook(t, dur):
         a = ease((t - 6.15) / 0.7)
         slide = (1 - a) * 34
         ty = 690 + slide
-        draw_mixed(d, W / 2 - mixed_width("dsh-ears", 108, mono="mono_b") / 2, ty, "dsh-ears", 108, (240, 248, 255, int(255 * a)), mono="mono_b")
+        draw_mixed(d, W / 2 - mixed_width("dsh-better-ears", 92, mono="mono_b") / 2, ty, "dsh-better-ears", 92, (240, 248, 255, int(255 * a)), mono="mono_b")
         sub = "给 agent 一双耳朵"
         draw_mixed(d, W / 2 - mixed_width(sub, 38) / 2, ty + 70, sub, 38, alpha(CYAN, a * 0.95))
         cap = "DeepSeek Harness 插件 · 语音 / 音乐 / 视频声音"
@@ -355,10 +355,10 @@ def scene_tools(t, dur):
         bx, by, bw, bh = 120, 700, 1680, 96
         d.rounded_rectangle([bx, by, bx + bw, by + bh], radius=16, fill=(9, 14, 24, int(240 * ia)), outline=(38, 54, 76, int(210 * ia)))
         draw_mixed(d, bx + 28, by + 58, "$", 26, alpha(CYAN, ia))
-        draw_mixed(d, bx + 52, by + 58, "plugin install dsh-ears", 26, (214, 226, 240, int(250 * ia)))
-        draw_mixed(d, bx + 470, by + 58, "→", 26, alpha(FAINT, ia))
-        draw_mixed(d, bx + 500, by + 58, "installed · 7 tools · local only", 26, alpha(GREEN, ia))
-        draw_mixed(d, bx + 1080, by + 58, "无 Python 环境 · 复用 DSH 自带识别器", 22, (150, 164, 184, int(220 * ia)))
+        draw_mixed(d, bx + 52, by + 58, "plugin install dsh-better-ears", 26, (214, 226, 240, int(250 * ia)))
+        draw_mixed(d, bx + 560, by + 58, "→", 26, alpha(FAINT, ia))
+        draw_mixed(d, bx + 590, by + 58, "installed · 7 tools · local only", 26, alpha(GREEN, ia))
+        draw_mixed(d, bx + 1120, by + 58, "无 Python 环境 · 复用 DSH 自带识别器", 22, (150, 164, 184, int(220 * ia)))
     draw_brand(img, t, "安装")
     return img
 
@@ -625,7 +625,7 @@ def scene_end(t, dur):
         xx = cx - 88 + i * 44
         d.rounded_rectangle([xx - 10, cy - hh / 2, xx + 10, cy + hh / 2], radius=10, fill=alpha(CYAN, 0.9 * la))
     ta = ease((t - 0.5) / 0.6)
-    d.text((W / 2, cy + 110), "dsh-ears", font=font("mono_b", 76), fill=alpha(TEXT, ta), anchor="mm")
+    d.text((W / 2, cy + 110), "dsh-better-ears", font=font("mono_b", 64), fill=alpha(TEXT, ta), anchor="mm")
     d.text((W / 2, cy + 190), "让 agent 真正听见", font=font("cjk_m", 40), fill=alpha(CYAN, 0.95 * ta), anchor="mm")
     ca = ease((t - 1.5) / 0.6)
     chips = ["语音转写", "音乐分析", "卡点检测", "曲式结构", "响度", "本地运行"]
@@ -640,8 +640,8 @@ def scene_end(t, dur):
     if ia > 0.01:
         d.rounded_rectangle([W / 2 - 520, 700, W / 2 + 520, 812], radius=16, fill=(9, 14, 24, int(240 * ia)), outline=(38, 54, 76, int(220 * ia)))
         draw_mixed(d, W / 2 - 490, 748, "$", 26, alpha(CYAN, ia))
-        draw_mixed(d, W / 2 - 462, 748, "plugin install dsh-ears", 26, (220, 232, 246, int(252 * ia)))
-        draw_mixed(d, W / 2 - 490, 786, "设置 → 插件 → dsh-ears（音频分析）· 全本地 · 零上传", 21, (168, 184, 206, int(245 * ia)))
+        draw_mixed(d, W / 2 - 462, 748, "plugin install dsh-better-ears", 26, (220, 232, 246, int(252 * ia)))
+        draw_mixed(d, W / 2 - 500, 786, "设置 → 插件 → dsh-better-ears（音频分析）· 全本地 · 零上传", 21, (168, 184, 206, int(245 * ia)))
     fa = ease((t - 3.4) / 0.6)
     if fa > 0.01:
         d.text((W / 2, 890), "全本地推理 · 零上传 · 零 API 费用", font=font("cjk", 25), fill=(176, 196, 216, int(250 * fa)), anchor="mm")

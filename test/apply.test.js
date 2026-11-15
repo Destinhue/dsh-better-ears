@@ -45,7 +45,7 @@ test('audio_status is callable without a speech service', async () => {
   apply(ctx, { enableLocalAsr: false });
   const status = registered.find((tool) => tool.name === 'audio_status');
   const result = await status.execute({});
-  assert.match(result.text, /dsh-ears 环境/);
+  assert.match(result.text, /dsh-better-ears 环境/);
   assert.match(result.text, /语音识别/);
   assert.doesNotMatch(result.text, /undefined|NaN/);
 });

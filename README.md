@@ -1,14 +1,14 @@
-# dsh-ears
+# dsh-better-ears
 
-[![test](https://github.com/Destinhue/dsh-ears/actions/workflows/test.yml/badge.svg)](https://github.com/Destinhue/dsh-ears/actions/workflows/test.yml)
+> 0.2.0 起从 `dsh-ears` 更名为 `dsh-better-ears`。旧名插件请先卸载，再安装本目录；设置页改为 `/dsh-better-ears`，旧 `/dsh-ears` 不再使用。
 
 让 agent 听得见声音。
 
 一个 DeepSeek Harness 插件：**语音**（转写 / 时间戳 / 字幕）、**视频里的声音**（音轨、镜头是否卡在拍上）、**音乐**（速度 / 节拍网格 / 调性 / 和弦 / 曲式）——全部在本机算，不需要上传音频，不按次计费。
 
-思路来自 [dsh-soundtry](https://github.com/CixiSVesper/dsh-soundtry)（「让 agent 听得见声音」，六个本地工具 + 一条诚实的报告风格）。dsh-ears 把它的**方法论**搬到了一套这个环境里真的跑得起来的技术栈上：
+思路来自 [dsh-soundtry](https://github.com/CixiSVesper/dsh-soundtry)（「让 agent 听得见声音」，六个本地工具 + 一条诚实的报告风格）。dsh-better-ears 把它的**方法论**搬到了一套这个环境里真的跑得起来的技术栈上：
 
-| | dsh-soundtry | dsh-ears |
+| | dsh-soundtry | dsh-better-ears |
 | --- | --- | --- |
 | 运行时 | Python venv + numpy/librosa/faster-whisper | 纯 Node ESM，零 npm 依赖 |
 | 语音识别 | 自装 faster-whisper（首次装包 + 下模型） | 复用 DSH 自带的 SenseVoice 识别器，没有就自动加载；再没有就退回接口/命令 |
@@ -31,9 +31,9 @@
 
 ## 安装
 
-不想 clone 的话，直接下 **[v0.1.0 的 zip](https://github.com/Destinhue/dsh-ears/releases/download/v0.1.0/dsh-ears-0.1.0.zip)**（84 KB），解压后按下面的步骤装上就行；release 里还有宣传片和封面。
+当前 0.2.0 尚未发布 release：请直接从本目录安装；新仓库与 release 发布后，这里会补下载链接，届时 zip 名为 `dsh-better-ears-0.2.0.zip`。
 
-把本目录交给 DSH 的插件管理器：**设置 → 插件 → 安装本地插件**，选择 `dsh-ears` 目录；或者让 agent 调用 `plugin_manager install_bundle`（`target` 指向本目录）。安装器读取 `dsh.bundle.patch`，把 `dsh-ears` 插进当前 profile，重启或热加载后生效。没有配置也能直接跑：DSP 部分只要 ffmpeg。
+把本目录交给 DSH 的插件管理器：**设置 → 插件 → 安装本地插件**，选择 `dsh-better-ears` 目录；或者让 agent 调用 `plugin_manager install_bundle`（`target` 指向本目录）。安装器读取 `dsh.bundle.patch`，把 `dsh-better-ears` 插进当前 profile，重启或热加载后生效。没有配置也能直接跑：DSP 部分只要 ffmpeg。
 
 自检（不需要启动 DSH）：
 
@@ -41,7 +41,7 @@
 node --test test/*.test.js   # 11 项：注册、报告、状态、设置页 token
 ```
 
-设置入口：**设置 → 插件 → dsh-ears**（设置页由 `client.js` 注册；本机 API 页在 `/dsh-ears?token=…`，token 每次启动随机，不出现在日志里）。
+设置入口：**设置 → 插件 → dsh-better-ears**（设置页由 `client.js` 注册；本机 API 页在 `/dsh-better-ears?token=…`，token 每次启动随机，不出现在日志里）。
 
 ## 宣传片
 

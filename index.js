@@ -1,5 +1,5 @@
 /**
- * dsh-ears — audio that the agent can actually hear.
+ * dsh-better-ears — audio that the agent can actually hear.
  *
  * Two halves, both local:
  *   1. DSP (lib/dsp/*): tempo, beat grid, key, chords, pitched line, song form, loudness.
@@ -22,7 +22,7 @@ import { resolveFfmpeg, run } from './lib/audio.js';
 import { createSettingsServer } from './lib/settings.js';
 import { createTools } from './lib/tools.js';
 
-export const name = 'dsh-ears';
+export const name = 'dsh-better-ears';
 
 /**
  * `tools` is genuine: every tool here needs it. webServer/attachments/configEditor are
@@ -142,8 +142,8 @@ export function apply(ctx, rawConfig) {
     const text = error ? `${message} ${String(error?.message || error)}` : message;
     try {
       const logger = ctx?.logger;
-      if (typeof logger?.warn === 'function') logger.warn(`[dsh-ears] ${text}`);
-      else if (typeof logger?.info === 'function') logger.info(`[dsh-ears] ${text}`);
+      if (typeof logger?.warn === 'function') logger.warn(`[dsh-better-ears] ${text}`);
+      else if (typeof logger?.info === 'function') logger.info(`[dsh-better-ears] ${text}`);
     } catch { /* logging must never break loading */ }
   };
 

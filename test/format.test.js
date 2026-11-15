@@ -92,7 +92,7 @@ test('status survives a host without ffmpeg or speechToText', () => {
       canTranscribe: false,
     },
   });
-  assert.match(text, /dsh-ears 环境/);
+  assert.match(text, /dsh-better-ears 环境/);
   assert.match(text, /没有加载 speechToText/);
   assert.doesNotMatch(text, /undefined|NaN/);
 });

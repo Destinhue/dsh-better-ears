@@ -1,6 +1,6 @@
-![dsh-ears](preview.svg)
+![dsh-better-ears](preview.svg)
 
-# dsh-ears
+# dsh-better-ears
 
 Audio the agent can actually hear: speech transcription with timestamps, tempo/beat grid/downbeat, key & chords, song structure, loudness, and cut-on-beat — all local, no upload.
 
@@ -25,7 +25,7 @@ Audio the agent can actually hear: speech transcription with timestamps, tempo/b
 
 ## Install
 
-Install this directory through the DSH plugin manager (`plugin_manager install_bundle`), or add it to the profile dependencies. `cordis.patch.yml` inserts `dsh-ears`. Settings live under **Settings → Plugins → dsh-ears**.
+Install this directory through the DSH plugin manager (`plugin_manager install_bundle`), or add it to the profile dependencies. `cordis.patch.yml` inserts `dsh-better-ears`. Settings live under **Settings → Plugins → dsh-better-ears**.
 
 Self-check: `node --test test/*.test.js`.
 

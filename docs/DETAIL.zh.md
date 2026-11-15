@@ -1,6 +1,6 @@
-![dsh-ears](preview.svg)
+![dsh-better-ears](preview.svg)
 
-# dsh-ears
+# dsh-better-ears
 
 让 agent 听得见声音：**语音**转写与时间戳、**音乐**的速度/调性/和弦/曲式、**视频里的声音**与画面切点。全部在本机完成，不上传音频。
 
@@ -25,7 +25,7 @@
 
 ## 安装
 
-在 DSH 的插件管理里安装本目录（`plugin_manager install_bundle`），或把目录放进 profile 的依赖。`cordis.patch.yml` 会插入 `dsh-ears`。设置页在 **设置 → 插件 → dsh-ears**。
+在 DSH 的插件管理里安装本目录（`plugin_manager install_bundle`），或把目录放进 profile 的依赖。`cordis.patch.yml` 会插入 `dsh-better-ears`。设置页在 **设置 → 插件 → dsh-better-ears**。
 
 自检：`node --test test/*.test.js`（10 项）。
 

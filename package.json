@@ -1,6 +1,6 @@
 {
-  "name": "dsh-ears",
-  "version": "0.1.0",
+  "name": "dsh-better-ears",
+  "version": "0.2.0",
   "description": "Audio the agent can hear: speech transcription with timestamps, tempo/beat grid/downbeat, key & chords, song structure, loudness and cut-on-beat — local ffmpeg + DSP, no cloud required.",
   "type": "module",
   "main": "./index.js",
@@ -50,13 +50,5 @@
       "platform": "web"
     }
   },
-  "author": "Destinhue",
-  "homepage": "https://github.com/Destinhue/dsh-ears",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Destinhue/dsh-ears.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Destinhue/dsh-ears/issues"
-  }
+  "author": "Destinhue"
 }
