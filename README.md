@@ -1,5 +1,7 @@
 # dsh-ears
 
+[![test](https://github.com/Destinhue/dsh-ears/actions/workflows/test.yml/badge.svg)](https://github.com/Destinhue/dsh-ears/actions/workflows/test.yml)
+
 让 agent 听得见声音。
 
 一个 DeepSeek Harness 插件：**语音**（转写 / 时间戳 / 字幕）、**视频里的声音**（音轨、镜头是否卡在拍上）、**音乐**（速度 / 节拍网格 / 调性 / 和弦 / 曲式）——全部在本机算，不需要上传音频，不按次计费。
