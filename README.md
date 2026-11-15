@@ -31,7 +31,7 @@
 
 ## 安装
 
-当前 0.2.0 尚未发布 release：请直接从本目录安装；新仓库与 release 发布后，这里会补下载链接，届时 zip 名为 `dsh-better-ears-0.2.0.zip`。
+下载 [`dsh-better-ears-0.2.0.zip`](https://github.com/Destinhue/dsh-better-ears/releases/download/v0.2.0/dsh-better-ears-0.2.0.zip) 解压后安装这个目录；旧版 `dsh-ears` 请先卸载。
 
 把本目录交给 DSH 的插件管理器：**设置 → 插件 → 安装本地插件**，选择 `dsh-better-ears` 目录；或者让 agent 调用 `plugin_manager install_bundle`（`target` 指向本目录）。安装器读取 `dsh.bundle.patch`，把 `dsh-better-ears` 插进当前 profile，重启或热加载后生效。没有配置也能直接跑：DSP 部分只要 ffmpeg。
 
