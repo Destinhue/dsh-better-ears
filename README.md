@@ -31,6 +31,8 @@
 
 ## 安装
 
+不想 clone 的话，直接下 **[v0.1.0 的 zip](https://github.com/Destinhue/dsh-ears/releases/download/v0.1.0/dsh-ears-0.1.0.zip)**（84 KB），解压后按下面的步骤装上就行；release 里还有宣传片和封面。
+
 把本目录交给 DSH 的插件管理器：**设置 → 插件 → 安装本地插件**，选择 `dsh-ears` 目录；或者让 agent 调用 `plugin_manager install_bundle`（`target` 指向本目录）。安装器读取 `dsh.bundle.patch`，把 `dsh-ears` 插进当前 profile，重启或热加载后生效。没有配置也能直接跑：DSP 部分只要 ffmpeg。
 
 自检（不需要启动 DSH）：
